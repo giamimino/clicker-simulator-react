@@ -1,0 +1,166 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.btn {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  font-size: 18px;
+  gap: 10px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  transition-delay: 0.25s;
+  transition: color 0.5s ease;
+  font-weight: 800;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1),
+              0 0 10px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  left: -5px;
+  top: 0;
+  position: absolute;
+  background-color: #fff;
+  z-index: -1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn:hover::before {
+  width: 120%;
+  border: 2px solid #fff;
+}
+
+.btn:hover {
+  color: #000;
+  border: 2px solid #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn:active {
+  background-color: #9e9e9e;
+  border-color: #9e9e9e;
+}
+
+.text {
+  font-weight: 700;
+  animation-name: bounce;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {
+      transform: scale(1.2);
+  }
+
+  50% {
+      transform: scale(1.5);
+  }
+
+  100% {
+      transform: scale(1.2);
+  }
+}
+
+.ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2%;
+}
+
+.li {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.li::after {
+  content: "";
+  width: 0;
+height: 0;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+border-bottom: 10px solid #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.li::before {
+  content: "cost: 50";
+  width: 100%;
+  height: 48px;
+  text-align: center;
+  background-color: #fff;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 75%;
+  font-weight: 900;
+  left: 0;
+  bottom: -48px;
+  transition: all .3s ease;
+  color: #000;
+  opacity: 0;
+  border-radius: 8px;
+}
+
+.li:nth-child(1)::before {
+  content: "cost: 50";
+}
+
+.li:nth-child(2)::before {
+  content: "cost: 200";
+}
+
+.li:nth-child(3)::before {
+  content: "cost: 450";
+}
+
+.li:hover::after {
+  bottom: -24px;
+  opacity: 1;
+}
+
+.li:hover::before {
+  bottom: -72px;
+  opacity: 1;
+}
+
+.link {
+  text-decoration: underline;
+  color: blue;
+}
