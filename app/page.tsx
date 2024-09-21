@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { useState } from 'react';
 import Link from "next/link";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function Home() {
   const [count, setCount] = useState(0);
